@@ -1,0 +1,27 @@
+<h4 [class]="green">
+  {{"This is a" + "test component"}}
+</h4>
+
+<h2 [ngClass]="classMessages">Hey</h2>
+
+<input [(ngModel)]="name" type="text"> {{name}}
+
+<input #myInput type="text" [disabled]="dis"> <button (click)="sendButton(myInput.value)">Send</button> {{inputText}}
+
+<h2 [ngClass]="toggleClasses" [style.display]="displayToggle ? 'none' : 'block' " >Style binding</h2>
+
+<div [style.display]="toggleDiv ? 'none' : 'block'">
+    <button (click)="toggle()">Toggle</button>
+    <button (click)="greenToggle()">Text Green</button>
+    <button (click)="redToggle()">Text Red</button>
+</div>
+
+<h2 [style.color]="hasErrors ? 'red' : 'green'">Style binding</h2>
+
+<h2 [style.color]="styleBinding">Style binding</h2>
+
+<h2 [ngStyle]="titleStyles">Style binding</h2>
+
+<button (click)="onClick()">Click</button> {{greeting}}
+
+<button (click)="hit($event)">Hit</button>
