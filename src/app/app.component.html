@@ -3,8 +3,92 @@
   <h1>
     {{ title }}!
   </h1>
+  <p>
+    {{message | lowercase}}
+  </p>
+  <p>
+    {{message | uppercase}}
+  </p>
+  <p>
+    {{message | titlecase}}
+  </p>
+  <p>
+    {{message | slice:8:18}}
+  </p>
+  <p>
+    {{jsonObj | json}}
+  </p>
+
+  <p>
+    {{10.234 | number:'2.1-2'}}
+  </p>
+  <p>
+    {{10.234 | number:'3.2-3'}}
+  </p>
+  <p>
+    {{10.234 | number:'3.4-5'}}
+  </p>
+
+  <p>
+    {{ 0.25 | percent}}
+  </p>
+  <p>
+    {{ 30/800 | percent }}
+  </p>
+
+  <p>
+    {{ 100 | currency }}
+  </p>
+
+  <p>
+    {{ 100 | currency:'INR' }}
+  </p>
+
+  <p>
+    {{ 100 | currency:'INR ':'code'}}
+  </p>
+
+  <p>
+    {{date}}
+  </p>
+
+  <p>
+    {{date | date:'short'}}
+  </p>
+
+  <p>
+    {{date | date:'shortDate'}}
+  </p>
+
+  <p>
+    {{date | date:'shortTime'}}
+  </p>
+
+  <p>
+    {{date | date:'mediumDate'}}
+  </p>
+
+  <p>
+    {{date | date:'mediumTime'}}
+  </p>
+
+  <p>
+    {{date | date:'longDate'}}
+  </p>
+
+  <p>
+    {{date | date:'longTime'}}
+  </p>
+
   <hr>
   <h2>Test Component</h2>
   <app-test></app-test>
 
+  <hr>
+  <app-directives (childEvent)="message=$event" [parentData]="name"></app-directives>
+
 </div>
+
+<app-employee></app-employee>
+
+<app-employee-details></app-employee-details>

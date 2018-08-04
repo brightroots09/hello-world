@@ -49,7 +49,9 @@ export class TestComponent implements OnInit {
     var that = this;
     this.toggleDiv = false
     this.greeting = "Hey"
-    this.hasErrors = false
+    this.hasErrors = false;
+    this.classMessages["text-danger"] = !this.classMessages["text-danger"];
+    this.classMessages["text-success"] = !this.classMessages["text-success"];
     setTimeout(function(){
       that.greeting = "";
       that.hasErrors = true

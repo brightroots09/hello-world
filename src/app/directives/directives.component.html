@@ -1,0 +1,53 @@
+<h2>
+  {{"This is " + name}}
+</h2>
+
+<h3 *ngIf="displayName; else elseBlock">
+  If statement
+</h3>
+
+<ng-template #elseBlock>
+  <h3>
+    Else Block
+  </h3>
+</ng-template>
+
+<div *ngIf="displayDirective; then ifBlock; else otherBlock"></div>
+
+<ng-template #ifBlock>
+  <h3>
+    Then block
+  </h3>
+</ng-template>
+
+<ng-template #otherBlock>
+  <h3>
+    Other Block
+  </h3>
+</ng-template>
+
+<button (click)="hitMe()">Click</button>
+
+<span [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">
+    Case of color red
+  </p>
+  <p *ngSwitchCase="'green'">
+    Case of color green
+  </p>
+  <p *ngSwitchDefault>
+    Default case
+  </p>
+</span>
+
+<button (click)="switchRed()">Red</button>
+<button (click)="switchGreen()">Green</button>
+<button (click)="switchDefault()">Otherwise</button>
+
+<div *ngFor="let color of colors; index as i; first as f; last as l; odd as o; even as e">
+  <p>
+    {{"index = " + i + ", "}} {{"first element = " + f + ", "}} {{"last element = " + l + ", "}} {{"odd element = " + o + ", "}} {{"even element = " + e + ", "}} {{"=======> " + color}}
+  </p>
+</div>
+
+<button (click)="eventEmit()">Emit Event</button>

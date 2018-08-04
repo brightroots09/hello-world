@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hello World!';
+  public name = "App Component"
+
+  public jsonObj = {
+    "name": "Angular",
+    "versione": "6"
+  }
+
+  public date = new Date()
+
 }
